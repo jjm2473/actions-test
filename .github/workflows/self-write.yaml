@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: check
-        run: pwd && ls -la
+      - name: Count
+        run: expr $(cat count)  + 1 > count
+      - name: Submit
+        run: git add count && git commit -m 'update count' && git push
 
