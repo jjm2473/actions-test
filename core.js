@@ -1,5 +1,5 @@
-(function() {
-  module.exports = function(m3u8) {
+module.exports = function(m3u8Parser) {
+  return function(m3u8) {
     var putAry = function(map, key, value) {
       var ary = map[key];
       if (ary === undefined) {
@@ -82,4 +82,4 @@
     };
     return toTxt(byCountry, countryName, '其他地区') + toTxt(byGenre, genreName, '其他类别');
   };
-})();
+};
