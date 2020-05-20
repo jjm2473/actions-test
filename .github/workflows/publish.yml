@@ -24,7 +24,7 @@ jobs:
         npm run generate https://iptv-org.github.io/iptv/languages/kor.m3u kor.txt
 
     - name: Clean
-      run: rm -rf .github
+      run: rm -rf .github && ls -l .
 
     - name: Git init
       run: |

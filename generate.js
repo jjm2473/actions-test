@@ -10,6 +10,9 @@ function get(url, cb) {
 
 const url = process.argv[2];
 const dest = process.argv[3] || 'iptv.txt';
+
+console.log('url', url, 'dest', dest);
+
 if (!url) {
     console.error('USAGE: node generate.js URL [ DEST_FILE ]');
     process.exitCode = 64;
