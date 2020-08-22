@@ -22,20 +22,6 @@ jobs:
           git config --global user.name "Actions"
           git config --global user.email "actions@github.com"
           git add count && git commit -m 'update count' && git push
-      - name: Fetch CDN
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.CDN_TOKEN }}
-          repository: jjm2473/cdn
-          fetch-depth: 2
-          path: cdn
-      - name: Push CDN
-        run: |
-          git config --global user.name "Actions"
-          git config --global user.email "actions@github.com"
-          echo test > cdn/test.txt
-          git -C cdn add --all
-          git -C cdn commit -m 'release'
-          git -C cdn push
+
   
 
