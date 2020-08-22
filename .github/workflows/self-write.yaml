@@ -9,6 +9,10 @@ jobs:
     name: Update
     runs-on: ubuntu-latest
     steps:
+      - name: Env
+        run: echo repo $REPO
+        env: 
+          REPO: "${{ github.repository }}"
       - name: Checkout
         uses: actions/checkout@v2
       - name: Count
