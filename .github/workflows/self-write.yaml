@@ -25,6 +25,7 @@ jobs:
       - name: Fetch CDN
         uses: actions/checkout@v2
         with:
+          persist-credentials: true
           repository: jjm2473/cdn
           fetch-depth: 2
           path: cdn
