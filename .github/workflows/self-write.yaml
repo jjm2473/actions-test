@@ -14,5 +14,8 @@ jobs:
       - name: Count
         run: expr $(cat count)  + 1 > count
       - name: Submit
-        run: git add count && git commit -m 'update count' && git push
+        run: |
+          git config --global user.name "Actions"
+          git config --global user.email "actions@github.com"
+          git add count && git commit -m 'update count' && git push
 
