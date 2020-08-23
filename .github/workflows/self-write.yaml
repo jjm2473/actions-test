@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Test Lines
         run: |
-          echo repo $TEST_LINES > test.pub
+          echo -e "$TEST_LINES" > test.pub
           cat test.pub
           wc -l test.pub
           grep jjm2473 test.pub
