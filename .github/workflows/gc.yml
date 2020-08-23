@@ -1,0 +1,26 @@
+name: GC
+
+on:
+  watch:
+    types: [started]
+
+env:
+  RESET_COMMIT: 5b0d8b5001ad22929e90ea8a83ab92d65a9ddba1
+
+jobs:
+  gc:
+    if: github.event.repository.owner.id == github.event.sender.id
+    name: GC
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Reset
+        run: |
+          git reset --soft $RESET_COMMIT
+          git add --all
+          git commit -m 'reset'
+          git push -f
+

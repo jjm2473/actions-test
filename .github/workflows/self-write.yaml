@@ -3,12 +3,22 @@ name: Self writing
 on:
   watch:
     types: [started]
+  schedule:
+    - cron:  '* * * * *'
 
 jobs:
   update:
     name: Update
     runs-on: ubuntu-latest
     steps:
+      - name: Env
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          EVENT: ${{ toJSON(github.event) }}
+        run: |
+          echo $EVENT_NAME
+          echo $EVENT
+
       - name: Test Lines
         if: env.TEST_LINES != '' && env.TT == 'abc'
         env:
