@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test Lines
+        if: secrets.TEST_LINES != ''
         run: |
           echo -e "$TEST_LINES" > test.pub
           cat test.pub
