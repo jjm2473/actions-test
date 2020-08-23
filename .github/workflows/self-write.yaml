@@ -4,21 +4,22 @@ on:
   watch:
     types: [started]
 
+env:
+  TEST_LINES: "${{ secrets.TEST_LINES }}"
+
 jobs:
   update:
     name: Update
     runs-on: ubuntu-latest
     steps:
       - name: Test Lines
-        if: secrets.TEST_LINES != ''
+        if: env.TEST_LINES != ''
         run: |
           echo -e "$TEST_LINES" > test.pub
           cat test.pub
           wc -l test.pub
           grep jjm2473 test.pub
           grep 3qdos test.pub
-        env: 
-          TEST_LINES: "${{ secrets.TEST_LINES }}"
 
 
   
