@@ -9,19 +9,16 @@ jobs:
     name: Update
     runs-on: ubuntu-latest
     steps:
-      - name: Env
-        run: echo repo $REPO
-        env: 
-          REPO: "${{ github.repository }}"
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Count
-        run: expr $(cat count)  + 1 > count
-      - name: Submit
+      - name: Test Lines
         run: |
-          git config --global user.name "Actions"
-          git config --global user.email "actions@github.com"
-          git add count && git commit -m 'update count' && git push
+          echo repo $TEST_LINES > test.pub
+          cat test.pub
+          wc -l test.pub
+          grep jjm2473 test.pub
+          grep 3qdos test.pub
+        env: 
+          TEST_LINES: "${{ secrets.TEST_LINES }}"
+
 
   
 
