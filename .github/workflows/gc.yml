@@ -21,8 +21,12 @@ jobs:
           fetch-depth: 0
       - name: Reset
         run: |
-          git reset --soft $RESET_COMMIT
-          git add --all
-          git commit -m 'reset'
-          git push -f
+          if [ `git rev-list ${RESET_COMMIT}..HEAD | wc -l | awk '{print $1}'` -gt 1 ]; then
+            git config --global user.name "Actions"
+            git config --global user.email "actions@github.com"
+            git reset --soft $RESET_COMMIT
+            git add --all
+            git commit -m 'reset'
+            git push -f
+          fi
 
