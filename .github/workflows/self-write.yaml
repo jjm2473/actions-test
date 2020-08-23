@@ -9,6 +9,7 @@ on:
 jobs:
   update:
     name: Update
+    if: github.event_name == 'schedule' || github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-latest
     steps:
       - name: Env
