@@ -18,18 +18,8 @@ jobs:
           echo $EVENT_NAME
           echo $EVENT
 
-      - name: Test Lines
-        if: env.TEST_LINES != '' && env.TT == 'abc'
-        env:
-          TEST_LINES: "${{ secrets.TEST_LINES }}"
-          TT: abc
+      - name: Test pipe
         run: |
-          echo -e "$TEST_LINES" > test.pub
-          cat test.pub
-          wc -l test.pub
-          grep jjm2473 test.pub
-          grep 3qdos test.pub
+          true || bash -c 'set -o pipefail ; false | true'
 
-
-  
 
