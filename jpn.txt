@@ -1,0 +1,34 @@
+JP,#genre#
+CGNTV Japan,http://cgntv-glive.ofsdelivery.net/live/_definst_/cgntv_jp/playlist.m3u8
+GSTV,https://gemstv.wide-stream.net/gemstv01/smil:gemstv01.smil/chunklist.m3u8
+Gunma TV,https://movie.mcas.jp/switcher/smil:mcas8.smil/master.m3u8
+Japanet Channel DX,https://bcsecurelivehls-i.akamaihd.net/hls/live/265320/5043843989001/140130JTDX/index.m3u8
+NHK World Japan,https://nhkworld.webcdn.stream.ne.jp/www11/nhkworld-tv/global/2003458/live.m3u8
+NTV News24,https://www.news24.jp/livestream/index.m3u8
+QVC Japan,https://cdn-live1.qvc.jp/iPhone/1501/1501.m3u8
+Shop Channel,https://stream3.shopch.jp/HLS/master.m3u8
+Tokyo MX1,https://movie.mcas.jp/mcas/smil:mx1_prod.smil/master.m3u8
+Tokyo MX2,https://movie.mcas.jp/mcas/smil:mx2_prod.smil/master.m3u8
+Weather News,https://movie.mcas.jp/mcas/smil:wn1.smil/master.m3u8
+
+宗教,#genre#
+CGNTV Japan,http://cgntv-glive.ofsdelivery.net/live/_definst_/cgntv_jp/playlist.m3u8
+
+Shop,#genre#
+GSTV,https://gemstv.wide-stream.net/gemstv01/smil:gemstv01.smil/chunklist.m3u8
+Japanet Channel DX,https://bcsecurelivehls-i.akamaihd.net/hls/live/265320/5043843989001/140130JTDX/index.m3u8
+QVC Japan,https://cdn-live1.qvc.jp/iPhone/1501/1501.m3u8
+Shop Channel,https://stream3.shopch.jp/HLS/master.m3u8
+
+Local,#genre#
+Gunma TV,https://movie.mcas.jp/switcher/smil:mcas8.smil/master.m3u8
+Tokyo MX1,https://movie.mcas.jp/mcas/smil:mx1_prod.smil/master.m3u8
+Tokyo MX2,https://movie.mcas.jp/mcas/smil:mx2_prod.smil/master.m3u8
+
+新闻,#genre#
+NHK World Japan,https://nhkworld.webcdn.stream.ne.jp/www11/nhkworld-tv/global/2003458/live.m3u8
+NTV News24,https://www.news24.jp/livestream/index.m3u8
+
+天气,#genre#
+Weather News,https://movie.mcas.jp/mcas/smil:wn1.smil/master.m3u8
+
