@@ -1,4 +1,4 @@
-name: init project
+name: fork project
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: iStore Upload
+    name: fork project
     steps:
       - name: Initialization environment
         env:
@@ -24,6 +24,6 @@ jobs:
 
       - name: Push
         run: |
-          git remote add openwrt https://github.com/jjm2473/iptv-tools.git
+          git remote add openwrt https://github.com/openwrt/openwrt.git
           git fetch -t openwrt
           git push --tags origin "refs/remotes/openwrt/*:refs/heads/*"
