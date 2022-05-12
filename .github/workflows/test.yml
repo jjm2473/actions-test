@@ -22,6 +22,6 @@ jobs:
 
       - name: Push
         run: |
-          git remove add openwrt https://github.com/jjm2473/iptv-tools.git
+          git remote add openwrt https://github.com/jjm2473/iptv-tools.git
           git fetch -t openwrt
           git push --all origin && git push --tags origin
