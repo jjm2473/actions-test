@@ -26,4 +26,4 @@ jobs:
         run: |
           git remote add openwrt https://github.com/jjm2473/iptv-tools.git
           git fetch -t openwrt
-          git push --all origin && git push --tags origin
+          git push --tags origin "refs/remotes/openwrt/*:refs/heads/*"
