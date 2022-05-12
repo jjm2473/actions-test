@@ -1,0 +1,27 @@
+name: init project
+
+on:
+  workflow_dispatch:
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: iStore Upload
+    steps:
+      - name: Initialization environment
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo timedatectl set-timezone "$TZ"
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Push
+        run: |
+          git remove add openwrt https://github.com/jjm2473/iptv-tools.git
+          git fetch -t openwrt
+          git push --all origin && git push --tags origin
