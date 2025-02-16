@@ -26,6 +26,7 @@ jobs:
         uses: actions/github-script@v7
         id: set-array
         with:
+          result-encoding: string
           script: |
             console.log(${{ inputs.dockerhub }})
             if (${{ inputs.dockerhub }}) {
