@@ -26,15 +26,16 @@ jobs:
         uses: actions/github-script@v7
         id: set-array
         with:
+          result-encoding: string
           script: |
             console.log(${{ inputs.dockerhub }});
             const images = ["a"];
             if (${{ inputs.dockerhub }}) {
               images.push("b");
             }
-            return images;
+            return images.join('\n');
 
       - name: Dump Array
         env:
-          ARRAY: ${{ toJson(fromJson(steps.set-array.outputs.result)) }}
+          ARRAY: ${{ steps.set-array.outputs.result }}
         run: echo "$ARRAY"
