@@ -27,12 +27,12 @@ jobs:
         id: set-array
         with:
           script: |
-            console.log(${{ inputs.dockerhub }})
+            console.log(${{ inputs.dockerhub }});
+            const images = ["a"];
             if (${{ inputs.dockerhub }}) {
-              return ["a", "b"]
-            } else {
-              return ["b"]
+              images.push("b");
             }
+            return images;
 
       - name: Dump Array
         env:
